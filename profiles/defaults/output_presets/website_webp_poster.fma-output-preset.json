@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "kind": "output_preset",
+  "preset_id": "website_webp_poster",
+  "preset_name": "Poster - WebP Website Background",
+  "preset_version_id": "opv_000001_07-06-26_0000",
+  "format": "webp",
+  "description": "WebP poster frame for website background video outputs.",
+  "settings": {
+    "poster": true,
+    "timestamp": "00:00:01",
+    "fallback_to_first_frame": true,
+    "quality": 85,
+    "name_suffix": "-poster"
+  },
+  "metadata": {
+    "built_in": true,
+    "dev_seed": true
+  }
+}
