@@ -3,18 +3,10 @@
 from __future__ import annotations
 
 from PySide6.QtCore import Signal
-from PySide6.QtWidgets import (
-    QHBoxLayout,
-    QLabel,
-    QListWidget,
-    QListWidgetItem,
-    QPushButton,
-    QVBoxLayout,
-    QWidget,
-)
+from PySide6.QtWidgets import QHBoxLayout, QLabel, QListWidget, QListWidgetItem, QVBoxLayout, QWidget
 
 from fullmedia_alchemist.profiles import DefaultContent
-from fullmedia_alchemist.ui.widgets import CollapsibleSection
+from fullmedia_alchemist.ui.widgets import CollapsibleSection, ToolButton
 
 
 class ProfilePanel(QWidget):
@@ -96,11 +88,9 @@ class ProfilePanel(QWidget):
             ("⚙", "Settings", "profile_validator"),
         ]
         for text, tooltip, tool_id in actions:
-            button = QPushButton(text)
-            button.setToolTip(tooltip)
-            button.setProperty("tool_id", tool_id)
-            button.enterEvent = lambda event, tid=tool_id: self.tool_hovered.emit(tid)  # type: ignore[method-assign]
-            button.leaveEvent = lambda event: self.tool_unhovered.emit()  # type: ignore[method-assign]
+            button = ToolButton(text, tooltip=tooltip, tool_id=tool_id)
+            button.tool_hovered.connect(self.tool_hovered)
+            button.tool_unhovered.connect(self.tool_unhovered)
             layout.addWidget(button)
 
         return row
