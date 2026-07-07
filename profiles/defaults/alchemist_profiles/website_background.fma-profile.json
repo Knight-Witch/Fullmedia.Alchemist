@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "kind": "alchemist_profile",
+  "profile_id": "website_background",
+  "profile_name": "Website Background",
+  "profile_version_id": "apv_000001_07-06-26_0000",
+  "description": "Converts MP4 website background videos into AV1 WebM, VP9 WebM fallback, H.264 MP4 fallback, and WebP poster outputs.",
+  "input": {
+    "accepted_extensions": [".mp4"],
+    "accept_files": true,
+    "accept_folders": true,
+    "accept_archives": false,
+    "recursive": false,
+    "allow_drag_drop": true
+  },
+  "paths": {
+    "source_default": "{downloads}",
+    "output_default": "{source_parent}/Fullmedia_Alchemist_Output",
+    "completed_source_default": "{user_data}/Converted_Originals"
+  },
+  "naming": {
+    "base_mode": "source_stem",
+    "pattern": "{source_stem}{output_suffix}.{extension}",
+    "manual_override_allowed": true,
+    "collision_behavior": "append_sequence"
+  },
+  "color": {
+    "preserve_metadata": true,
+    "skip_hdr_or_10bit_sources": true,
+    "fallback_primaries": "bt709",
+    "fallback_transfer": "bt709",
+    "fallback_colorspace": "bt709",
+    "fallback_range": "tv"
+  },
+  "outputs": [
+    {
+      "output_preset_id": "website_av1_webm_ladder",
+      "preset_version_mode": "locked",
+      "preset_version_id": "opv_000001_07-06-26_0000",
+      "enabled": true,
+      "overrides": {}
+    },
+    {
+      "output_preset_id": "website_vp9_webm_fallback_ladder",
+      "preset_version_mode": "locked",
+      "preset_version_id": "opv_000001_07-06-26_0000",
+      "enabled": true,
+      "overrides": {}
+    },
+    {
+      "output_preset_id": "website_h264_mp4_fallback_ladder",
+      "preset_version_mode": "locked",
+      "preset_version_id": "opv_000001_07-06-26_0000",
+      "enabled": true,
+      "overrides": {}
+    },
+    {
+      "output_preset_id": "website_webp_poster",
+      "preset_version_mode": "locked",
+      "preset_version_id": "opv_000001_07-06-26_0000",
+      "enabled": true,
+      "overrides": {}
+    }
+  ],
+  "source_handling": {
+    "after_success": "move",
+    "destination": "{user_data}/Converted_Originals",
+    "on_failure": "leave_in_place"
+  },
+  "metadata": {
+    "built_in": true,
+    "dev_seed": true,
+    "based_on": "convert_mp4_to_multisize_webm.py"
+  }
+}
