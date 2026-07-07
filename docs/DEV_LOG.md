@@ -2,7 +2,7 @@
 
 ## Dev_v000.001.000_07-06-26
 
-Focus: project planning and documentation scaffold.
+Focus: project planning, documentation scaffold, and first MVP 1 UI shell implementation.
 
 Created the initial repository documentation set for Fullmedia Alchemist.
 
@@ -25,6 +25,28 @@ Captured confirmed decisions:
 - Footer/status bar internal tool version metadata.
 - First real workflow: Website Background conversion.
 
-Notes:
+Implemented in first coding pass:
 
-The next coding step should be MVP 1: PySide6 shell, modular panel layout, footer/version system, profile/sidebar skeleton, profile JSON persistence, and the dev Website Background profile/preset scaffold.
+- Initial Python project scaffold.
+- App version constants.
+- Internal tool metadata registry.
+- Lightweight profile/preset summary models.
+- Default JSON loader for built-in Alchemist Profiles and Output Presets.
+- Minimal reference validation for missing required fields and profile preset references.
+- PySide6 main window shell.
+- Main UI layout: left profile/preset panel, center queue panel, right inspector/preview panel, bottom progress/log panel, footer/status bar.
+- Reusable collapsible section widget.
+- Reusable drag/drop zone widget.
+- Reusable footer/status bar widget.
+- Reusable tool-aware button widget for footer hover metadata.
+- Entry point now launches the PySide6 shell instead of console placeholder output.
+- Initial tests for app metadata and default profile/preset loading.
+
+Next coding step:
+
+- Add proper reusable drag/drop path field widgets.
+- Add profile/preset store shell.
+- Add Advanced JSON editor shell.
+- Add import/export shell.
+- Add portable path resolver shell.
+- Begin formal validation models for profiles and Output Presets.
