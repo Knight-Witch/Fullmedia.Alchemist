@@ -1,0 +1,34 @@
+[project]
+name = "fullmedia-alchemist"
+version = "0.0.0"
+description = "Local Windows desktop media conversion workbench with Alchemist Profiles and Output Presets."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "PySide6>=6.7",
+    "pydantic>=2.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.5",
+    "pyinstaller>=6.0"
+]
+
+[project.scripts]
+fullmedia-alchemist = "fullmedia_alchemist.main:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
