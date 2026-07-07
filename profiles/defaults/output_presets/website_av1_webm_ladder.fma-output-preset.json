@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "kind": "output_preset",
+  "preset_id": "website_av1_webm_ladder",
+  "preset_name": "WebM - AV1 Website Ladder",
+  "preset_version_id": "opv_000001_07-06-26_0000",
+  "format": "webm",
+  "description": "Primary AV1 WebM ladder for high-quality website background video outputs.",
+  "settings": {
+    "codec": "libsvtav1",
+    "audio": "remove",
+    "pixel_format": "yuv420p",
+    "preset": 4,
+    "do_not_upscale": true,
+    "scale_filter": "lanczos",
+    "preserve_color_metadata": true,
+    "fallback_color": {
+      "primaries": "bt709",
+      "transfer": "bt709",
+      "colorspace": "bt709",
+      "range": "tv"
+    },
+    "ladder": [
+      {"height": 2160, "crf": 16, "suffix": "-{height}.av1"},
+      {"height": 1440, "crf": 18, "suffix": "-{height}.av1"},
+      {"height": 1080, "crf": 18, "suffix": "-{height}.av1"},
+      {"height": 720, "crf": 20, "suffix": "-{height}.av1"}
+    ]
+  },
+  "metadata": {
+    "built_in": true,
+    "dev_seed": true
+  }
+}
