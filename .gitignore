@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Build outputs
+build/
+dist/
+*.spec
+*.zip
+*.7z
+
+# App runtime data
+user_data/
+logs/
+temp/
+cache/
+Converted_Originals/
+
+# IDE/editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Large bundled binaries may be handled separately before release.
+# If FFmpeg binaries are intentionally committed later, adjust this rule.
+vendor/ffmpeg/*.exe
