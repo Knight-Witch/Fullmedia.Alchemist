@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0",
+  "kind": "output_preset",
+  "preset_id": "website_vp9_webm_fallback_ladder",
+  "preset_name": "WebM - VP9 Website Fallback Ladder",
+  "preset_version_id": "opv_000001_07-06-26_0000",
+  "format": "webm",
+  "description": "VP9 WebM fallback ladder for website background video outputs.",
+  "settings": {
+    "codec": "libvpx-vp9",
+    "audio": "remove",
+    "bitrate_mode": "crf",
+    "b_v": "0",
+    "quality": "good",
+    "cpu_used": 2,
+    "row_mt": true,
+    "pixel_format": "yuv420p",
+    "do_not_upscale": true,
+    "scale_filter": "lanczos",
+    "preserve_color_metadata": true,
+    "fallback_color": {
+      "primaries": "bt709",
+      "transfer": "bt709",
+      "colorspace": "bt709",
+      "range": "tv"
+    },
+    "ladder": [
+      {"height": 1080, "crf": 18, "suffix": "-{height}.vp9"},
+      {"height": 720, "crf": 22, "suffix": "-{height}.vp9"}
+    ]
+  },
+  "metadata": {
+    "built_in": true,
+    "dev_seed": true
+  }
+}
