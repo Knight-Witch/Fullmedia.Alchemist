@@ -1,21 +1,13 @@
-"""Application entry point placeholder.
-
-The first implementation milestone will replace this placeholder with the PySide6 shell.
-"""
+"""Application entry point for Fullmedia Alchemist."""
 
 from __future__ import annotations
 
-from .version import APP_NAME, APP_VERSION
+from fullmedia_alchemist.ui.main_window import run_app
 
 
 def main() -> int:
-    """Run the application.
-
-    Placeholder used while the repository documentation and architecture scaffold are established.
-    """
-    print(f"{APP_NAME} {APP_VERSION}")
-    print("PySide6 application shell is the next implementation milestone.")
-    return 0
+    """Run the PySide6 application."""
+    return run_app()
 
 
 if __name__ == "__main__":
